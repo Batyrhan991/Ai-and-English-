@@ -1,0 +1,243 @@
+<!DOCTYPE html>  <html lang="ru">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>AI Language Learning</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .header {
+            text-align: center;
+            color: #58cc02;
+            margin-bottom: 2rem;
+        }
+
+        .question {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #4b4b4b;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .option {
+            padding: 1rem;
+            border: 2px solid #e5e5e5;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background-color: white;
+            font-size: 1rem;
+        }
+
+        .option:hover {
+            background-color: #f7f7f7;
+        }
+
+        .option.selected {
+            border-color: #58cc02;
+            background-color: #e5f8d3;
+        }
+
+        .option.correct {
+            border-color: #58cc02;
+            background-color: #d7f9d1;
+        }
+
+        .option.wrong {
+            border-color: #ff4b4b;
+            background-color: #ffd1d1;
+        }
+
+        .button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .check {
+            background-color: #58cc02;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .check:hover {
+            background-color: #46a302;
+        }
+
+        .reset {
+            background-color: #ff4b4b;
+            color: white;
+        }
+
+        .reset:hover {
+            background-color: #e63939;
+        }
+
+        .progress {
+            height: 10px;
+            background-color: #e5e5e5;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #58cc02;
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.3s;
+        }
+    .article-content {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.article-content h2 {
+    color: #58cc02;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.article-content p {
+    color: #4b4b4b;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+} </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦉 AI Language Learning</h1>
+        </div>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="question">
+            Переведите на английский:
+            <br>
+            <strong>"Изучение английского языка с помощью искусственного интеллекта"</strong>
+        </div>
+        <div class="options">
+            <button class="option">Learning English with artificial intelligence</button>
+            <button class="option">Study English using AI technology</button>
+            <button class="option">English language learning through AI</button>
+            <button class="option">Artificial intelligence helps learn English</button>
+        </div>
+        <button class="button check" onclick="checkAnswer()">Проверить</button>
+        <button class="button reset" onclick="resetQuiz()">Начать заново</button>
+        <div id="videoContainer" style="display: none; margin-top: 20px;">
+            <div id="articleContent" class="article-content">
+    <h2>Изучение английского языка с помощью искусственного интеллекта</h2>
+    
+    <p>Сегодня искусственный интеллект (ИИ) активно используется в образовании и особенно популярен в изучении иностранных языков. Одним из ярких примеров является изучение английского языка с помощью ИИ-технологий, которые делают процесс обучения более эффективным, интересным и персонализированным.</p>
+    
+    <p>Современные приложения, такие как Duolingo, используют ИИ для адаптации уроков под уровень и прогресс каждого пользователя. Система анализирует ответы учащегося, определяет его сильные и слабые стороны и на основе этих данных предлагает индивидуальные упражнения. Благодаря этому обучение становится точечным и результативным.</p>
+    
+    <p>ИИ также применяется для распознавания речи. Учащийся может произносить фразы вслух, а программа моментально проверит правильность произношения и предложит корректировки. Это особенно важно для развития разговорных навыков без необходимости общения с носителем языка.</p>
+    
+    <p>Кроме того, ИИ может моделировать реальные ситуации общения, использовать чат-ботов, которые общаются с учеником, задают вопросы и помогают преодолеть языковой барьер. Такие технологии формируют навыки живого общения в безопасной и понятной среде.</p>
+    
+    <p>Использование искусственного интеллекта в изучении английского языка — это шаг в будущее, где обучение становится доступным, гибким и увлекательным для всех.</p>
+</div>
+    <iframe 
+        width="100%" 
+        height="315" 
+        src="https://www.youtube.com/embed/gtJZt1mDvQ0" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+</div>
+    </div>
+
+    <script>
+        const correctAnswer = "Learning English with artificial intelligence";
+        let selectedOption = null;
+        const options = document.querySelectorAll('.option');
+        const progressBar = document.querySelector('.progress-bar');
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                options.forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                selectedOption = option;
+            });
+        });
+
+        function checkAnswer() {  
+    if (!selectedOption) {  
+        alert('Пожалуйста, выберите вариант ответа!');  
+        return;  
+    }  
+
+    options.forEach(option => {  
+        if (option.textContent === correctAnswer) {  
+            option.classList.add('correct');  
+        } else {  
+            option.classList.remove('correct');  
+        }  
+    });  
+
+    if (selectedOption.textContent === correctAnswer) {  
+        progressBar.style.width = '100%';  
+        setTimeout(() => {  
+            alert('Поздравляем! Правильный ответ! 🎉');
+            document.getElementById('videoContainer').style.display = 'block';
+            document.getElementById('articleContent').style.display = 'block';
+        }, 500);  
+    } else {  
+        selectedOption.classList.add('wrong');  
+        setTimeout(() => {  
+            alert('Попробуйте еще раз! 😊');  
+        }, 500);  
+    }  
+}
+
+      function resetQuiz() {  
+    options.forEach(option => {  
+        option.classList.remove('selected', 'correct', 'wrong');  
+    });  
+    selectedOption = null;  
+    progressBar.style.width = '0%';
+    document.getElementById('videoContainer').style.display = 'none';
+    document.getElementById('articleContent').style.display = 'none';
+}
+
+    </script>
+  
+    
+</body>
+</html>
